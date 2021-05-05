@@ -2,7 +2,7 @@ const {alphabetLower, alphabetUpper} = require("./alphabets")
 
 const encodeDecode = (textToDecode, shift, action) => {
 
-    shift = shift > 26 ? shift - (Math.floor(shift/26) *26) : shift < - 26 ?  shift -(Math.floor(shift/26) *26) : shift
+    shift = shift > 26 ? Math.round(shift - (Math.floor(shift/26) *26)) : shift < - 26 ?  Math.round(shift -(Math.round(shift/26) *26)) : Math.round(shift)
 
     const splitedText = textToDecode.split("")
     const lettersInNumbers = splitedText.map((e)=>{
