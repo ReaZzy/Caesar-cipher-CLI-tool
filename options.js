@@ -10,13 +10,21 @@ program.parse();
 
 const options = program.opts()
 
-if(!options.shift || !options.action) {
+if(!options.shift || !options.action ) {
     process.exitCode = 1
     process.stderr.write(`Shift and action parameters is required (Exit code ${process.exitCode})`)
     process.exit(1)
 }
+if (options.shift){
+    if( isNaN(+options.shift) ){
+        process.exitCode = 5
+        process.stderr.write(`Shift must be a number (Exit code ${process.exitCode})`)
+        process.exit(5)
+    }
+}
+console.log()
 if(options.action){
-    if(options.action !== "decode" ||  options.action !== "encode"){
+    if(options.action.toString() !== "decode" &&  options.action.toString() !== "encode"){
         process.exitCode = 4
         process.stderr.write(`Action must be or encode either decode (Exit code ${process.exitCode})`)
         process.exit(4)
