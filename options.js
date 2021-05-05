@@ -15,5 +15,13 @@ if(!options.shift || !options.action) {
     process.stderr.write(`Shift and action parameters is required (Exit code ${process.exitCode})`)
     process.exit(1)
 }
+if(options.action){
+    if(options.action !== "decode" ||  options.action !== "encode"){
+        process.exitCode = 4
+        process.stderr.write(`Action must be or encode either decode (Exit code ${process.exitCode})`)
+        process.exit(4)
+    }
+}
+
 
 module.exports = options
