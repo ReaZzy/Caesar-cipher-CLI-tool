@@ -21,8 +21,12 @@ if (options.shift){
         process.stderr.write(`Shift must be a number (Exit code ${process.exitCode})`)
         process.exit(5)
     }
+    if(+options.shift % 1 !== 0){
+        process.exitCode = 6
+        process.stderr.write(`Shift must be integer, not float (Exit code ${process.exitCode})`)
+        process.exit(6)
+    }
 }
-console.log()
 if(options.action){
     if(options.action.toString() !== "decode" &&  options.action.toString() !== "encode"){
         process.exitCode = 4
