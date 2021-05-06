@@ -35,5 +35,12 @@ if(options.action){
     }
 }
 
+if(options.input && options.output){
+    if(options.input === options.output){
+        process.exitCode = 7
+        process.stderr.write(`Input and output must be different (Exit code ${process.exitCode})`)
+        process.exit(7)
+    }
+}
 
 module.exports = options
