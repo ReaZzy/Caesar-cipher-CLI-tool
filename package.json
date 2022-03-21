@@ -1,0 +1,27 @@
+{
+  "name": "caesar-cipher-cli-tool",
+  "version": "1.0.0",
+  "description": "this tool will help you to decode/encode caesar cipher",
+  "main": "my_caesar_cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReaZzy/Caesar-cipher-CLI-tool.git"
+  },
+  "keywords": [
+    "caesar-cipher",
+    "encode",
+    "decode"
+  ],
+  "author": "ReaZzy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReaZzy/Caesar-cipher-CLI-tool/issues"
+  },
+  "homepage": "https://github.com/ReaZzy/Caesar-cipher-CLI-tool#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
+}
